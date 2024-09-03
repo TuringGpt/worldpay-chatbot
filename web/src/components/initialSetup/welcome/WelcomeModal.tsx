@@ -215,7 +215,7 @@ export function _WelcomeModal({ user }: { user: User | null }) {
       );
       break;
     default:
-      title = "🎉 Welcome to WorldPay Chatbot";
+      title = "Welcome to WorldPay Chatbot";
       body = (
         <>
           <div>

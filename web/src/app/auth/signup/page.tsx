@@ -51,7 +51,7 @@ const Page = async () => {
       </div>
       <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div>
-          <Logo height={64} width={64} className="mx-auto w-fit" />
+          {/* <Logo height={64} width={64} className="mx-auto w-fit" /> */}
 
           <Card className="mt-4 w-96">
             <div className="flex">

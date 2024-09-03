@@ -48,7 +48,7 @@ export default function LogoType({
         </button>
       ) : (
         <div className="mr-1 invisible mb-auto h-6 w-6">
-          <Logo height={24} width={24} />
+          {/* <Logo height={24} width={24} /> */}
         </div>
       )}
       <div

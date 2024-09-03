@@ -236,7 +236,7 @@ export default function AddConnector({
         input_type: connector == "web" ? "load_state" : "poll", // single case
         name: name,
         source: connector,
-        refresh_freq: refreshFreq * 60 || null,
+        refresh_freq: 0 * 60 || null,
         prune_freq: pruneFreq * 60 * 60 * 24 || null,
         indexing_start: convertStringToDateTime(indexingStart),
         is_public: isPublic,

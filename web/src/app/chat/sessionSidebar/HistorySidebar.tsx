@@ -133,7 +133,7 @@ export const HistorySidebar = forwardRef<HTMLDivElement, HistorySidebarProps>(
                 <FiEdit className="flex-none " />
                 <p className="my-auto flex items-center text-sm">New Chat</p>
               </Link>
-              <button
+              {/* <button
                 onClick={() =>
                   createFolder("New Folder")
                     .then((folderId) => {
@@ -151,10 +151,10 @@ export const HistorySidebar = forwardRef<HTMLDivElement, HistorySidebarProps>(
                 className="w-full p-2 bg-white border-border border rounded items-center hover:bg-background-200 cursor-pointer transition-all duration-150 flex gap-x-2"
               >
                 <FiFolderPlus className="my-auto" />
-                {/* <p className="my-auto flex items-center text-sm">New Folder</p>
-              </button>
+                <p className="my-auto flex items-center text-sm">New Folder</p>
+              </button> */}
 
-              <Link
+              {/* <Link
                 href="/assistants/mine"
                 className="w-full p-2 bg-white border-border border rounded items-center hover:bg-background-200 cursor-pointer transition-all duration-150 flex gap-x-2"
               >

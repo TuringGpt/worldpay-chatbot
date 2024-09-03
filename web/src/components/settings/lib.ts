@@ -44,7 +44,7 @@ export async function fetchSettingsSS(): Promise<CombinedSettings | null> {
         settings = {
           chat_page_enabled: true,
           search_page_enabled: true,
-          default_page: "search",
+          default_page: "chat",
           maximum_chat_retention_days: null,
           notifications: [],
           needs_reindexing: false,

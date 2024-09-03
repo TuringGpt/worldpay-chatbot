@@ -45,13 +45,13 @@ export function AdminSidebar({ collections }: { collections: Collection[] }) {
               href={
                 settings && settings.default_page === "chat"
                   ? "/chat"
-                  : "/search"
+                  : "/chat"
               }
             >
               <div className="max-w-[200px] w-full flex gap-x-1 my-auto">
-                <div className="flex-none mb-auto">
+                {/* <div className="flex-none mb-auto">
                   <Logo />
-                </div>
+                </div> */}
                 <div className="flex-grow min-w-0 my-auto">
                   {enterpriseSettings && enterpriseSettings.application_name ? (
                     <div className="w-full">
@@ -60,12 +60,12 @@ export function AdminSidebar({ collections }: { collections: Collection[] }) {
                       </HeaderTitle>
                       {!NEXT_PUBLIC_DO_NOT_USE_TOGGLE_OFF_DANSWER_POWERED && (
                         <p className="text-xs text-subtle">
-                          Powered by Danswer
+                          Powered by Turing
                         </p>
                       )}
                     </div>
                   ) : (
-                    <HeaderTitle>Danswer</HeaderTitle>
+                    <HeaderTitle>WorldPay Chatbot</HeaderTitle>
                   )}
                 </div>
               </div>
@@ -79,7 +79,7 @@ export function AdminSidebar({ collections }: { collections: Collection[] }) {
               <p className="ml-1 break-words line-clamp-2 ellipsis leading-none">
                 Back to{" "}
                 {combinedSettings.enterpriseSettings?.application_name ||
-                  "Danswer"}
+                  "WorldPay Chatbot"}
               </p>
             </button>
           </Link>
@@ -124,7 +124,7 @@ export function AdminSidebar({ collections }: { collections: Collection[] }) {
           key={"danswerVersion"}
         >
           <h2 className="text-xs text-text w-52 font-medium pb-2">
-            Danswer version: {combinedSettings.webVersion}
+            version: {combinedSettings.webVersion}
           </h2>
         </div>
       )}

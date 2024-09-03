@@ -151,7 +151,7 @@ export const HistorySidebar = forwardRef<HTMLDivElement, HistorySidebarProps>(
                 className="w-full p-2 bg-white border-border border rounded items-center hover:bg-background-200 cursor-pointer transition-all duration-150 flex gap-x-2"
               >
                 <FiFolderPlus className="my-auto" />
-                <p className="my-auto flex items-center text-sm">New Folder</p>
+                {/* <p className="my-auto flex items-center text-sm">New Folder</p>
               </button>
 
               <Link
@@ -171,7 +171,7 @@ export const HistorySidebar = forwardRef<HTMLDivElement, HistorySidebarProps>(
                 <p className="my-auto flex items-center text-sm">
                   Manage Prompts
                 </p>
-              </Link>
+              </Link> */}
             </div>
           )}
           <div className="border-b border-border pb-4 mx-3" />

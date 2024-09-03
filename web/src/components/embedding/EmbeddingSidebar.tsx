@@ -33,15 +33,15 @@ export default function EmbeddingSidebar() {
       >
         <div className="fixed h-full left-0 top-0 w-[250px]">
           <div className="ml-4 mr-3 flex flex gap-x-1 items-center mt-2 my-auto text-text-700 text-xl">
-            <div className="mr-1 my-auto h-6 w-6">
+            {/* <div className="mr-1 my-auto h-6 w-6">
               <Logo height={24} width={24} />
-            </div>
+            </div> */}
 
             <div>
               {enterpriseSettings && enterpriseSettings.application_name ? (
                 <HeaderTitle>{enterpriseSettings.application_name}</HeaderTitle>
               ) : (
-                <HeaderTitle>Danswer</HeaderTitle>
+                <HeaderTitle>WorldPay Chatbot</HeaderTitle>
               )}
             </div>
           </div>

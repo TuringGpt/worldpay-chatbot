@@ -13,13 +13,13 @@ const ToggleSwitch = () => {
   const settings = useContext(SettingsContext);
 
   const [activeTab, setActiveTab] = useState(() => {
-    return pathname == "/search" ? "search" : "chat";
+    return pathname == "/chat" ? "chat" : "chat";
   });
 
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
-    const newTab = pathname === "/search" ? "search" : "chat";
+    const newTab = pathname === "/chat" ? "chat" : "chat";
     setActiveTab(newTab);
     localStorage.setItem("activeTab", newTab);
     setIsInitialLoad(false);
@@ -31,7 +31,7 @@ const ToggleSwitch = () => {
     if (settings?.isMobile && window) {
       window.location.href = tab;
     } else {
-      router.push(tab === "search" ? "/search" : "/chat");
+      router.push(tab === "chat" ? "/chat" : "/chat");
     }
   };
 
@@ -44,9 +44,9 @@ const ToggleSwitch = () => {
           isInitialLoad ? "" : "transition-transform duration-300 ease-in-out"
         } ${activeTab === "chat" ? "translate-x-[115%]" : "translate-x-[1%]"}`}
       />
-      <button
+      {/* <button
         className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ease-in-out flex items-center relative z-10 ${
-          activeTab === "search"
+          activeTab === "chat"
             ? "text-gray-800"
             : "text-gray-500 hover:text-gray-700"
         }`}
@@ -71,7 +71,7 @@ const ToggleSwitch = () => {
           Chat
           <div className="ml-2 flex items-end">{commandSymbol}D</div>
         </div>
-      </button>
+      </button> */}
     </div>
   );
 };

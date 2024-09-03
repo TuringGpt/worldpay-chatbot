@@ -17,7 +17,7 @@ export default function FixedLogo() {
     <>
       <Link
         href={
-          settings && settings.default_page === "chat" ? "/chat" : "/search"
+          settings && settings.default_page === "chat" ? "/chat" : "/chat"
         }
         className="fixed cursor-pointer flex z-40 left-2.5 top-2"
       >
@@ -30,11 +30,11 @@ export default function FixedLogo() {
               <div>
                 <HeaderTitle>{enterpriseSettings.application_name}</HeaderTitle>
                 {!NEXT_PUBLIC_DO_NOT_USE_TOGGLE_OFF_DANSWER_POWERED && (
-                  <p className="text-xs text-subtle">Powered by Danswer</p>
+                  <p className="text-xs text-subtle">Powered by Turing</p>
                 )}
               </div>
             ) : (
-              <HeaderTitle>Danswer</HeaderTitle>
+              <HeaderTitle>WorldPay Chatbot</HeaderTitle>
             )}
           </div>
         </div>

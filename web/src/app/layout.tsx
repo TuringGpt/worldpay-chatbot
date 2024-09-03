@@ -38,11 +38,11 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: enterpriseSettings?.application_name ?? "Danswer",
-    description: "Question answering for your documents",
-    icons: {
-      icon: logoLocation,
-    },
+    title: enterpriseSettings?.application_name ?? "WorldPay Chatbot",
+    description: "Chat with with Website and API documentation",
+    // icons: {
+    //   icon: logoLocation,
+    // },
   };
 }
 
@@ -60,19 +60,19 @@ export default async function RootLayout({
     return (
       <html lang="en" className={`${inter.variable} font-sans`}>
         <Head>
-          <title>Settings Unavailable | Danswer</title>
+          <title>WorldPay Chatbot</title>
         </Head>
         <body className="bg-background text-default">
           <div className="flex flex-col items-center justify-center min-h-screen">
             <div className="mb-2 flex items-center max-w-[175px]">
-              <HeaderTitle>Danswer</HeaderTitle>
-              <Logo height={40} width={40} />
+              <HeaderTitle>WorldPay Chatbot</HeaderTitle>
+              {/* <Logo height={40} width={40} /> */}
             </div>
 
             <Card className="p-8 max-w-md">
               <h1 className="text-2xl font-bold mb-4 text-error">Error</h1>
               <p className="text-text-500">
-                Your Danswer instance was not configured properly and your
+                Your instance was not configured properly and your
                 settings could not be loaded. Please contact your admin to fix
                 this error.
               </p>

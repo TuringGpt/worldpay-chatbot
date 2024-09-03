@@ -8,10 +8,10 @@ export function DanswerInitializingLoader() {
 
   return (
     <div className="mx-auto my-auto animate-pulse">
-      <Logo height={96} width={96} className="mx-auto mb-3" />
+      {/* <Logo height={96} width={96} className="mx-auto mb-3" /> */}
       <Bold>
         Initializing{" "}
-        {settings?.enterpriseSettings?.application_name ?? "Danswer"}
+        {settings?.enterpriseSettings?.application_name ?? "WorldPay Chatbot"}
       </Bold>
     </div>
   );

@@ -17,11 +17,13 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "user",
-        sa.Column("chosen_assistants", postgresql.ARRAY(sa.Integer()), nullable=True),
-    )
+    pass
+    # op.add_column(
+    #     "user",
+    #     sa.Column("chosen_assistants", postgresql.ARRAY(sa.Integer()), nullable=True),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("user", "chosen_assistants")
+    pass
+    # op.drop_column("user", "chosen_assistants")

@@ -17,8 +17,10 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.alter_column("oauth_account", "access_token", type_=sa.Text())
+    pass
+    # op.alter_column("oauth_account", "access_token", type_=sa.Text())
 
 
 def downgrade() -> None:
-    op.alter_column("oauth_account", "access_token", type_=sa.String(length=1024))
+    pass
+    # op.alter_column("oauth_account", "access_token", type_=sa.String(length=1024))

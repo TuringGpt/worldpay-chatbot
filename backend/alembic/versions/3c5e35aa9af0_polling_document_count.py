@@ -17,36 +17,38 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "connector_credential_pair",
-        sa.Column(
-            "last_successful_index_time",
-            sa.DateTime(timezone=True),
-            nullable=True,
-        ),
-    )
-    op.add_column(
-        "connector_credential_pair",
-        sa.Column(
-            "last_attempt_status",
-            sa.Enum(
-                "NOT_STARTED",
-                "IN_PROGRESS",
-                "SUCCESS",
-                "FAILED",
-                name="indexingstatus",
-                native_enum=False,
-            ),
-            nullable=False,
-        ),
-    )
-    op.add_column(
-        "connector_credential_pair",
-        sa.Column("total_docs_indexed", sa.Integer(), nullable=False),
-    )
+    pass
+    # op.add_column(
+    #     "connector_credential_pair",
+    #     sa.Column(
+    #         "last_successful_index_time",
+    #         sa.DateTime(timezone=True),
+    #         nullable=True,
+    #     ),
+    # )
+    # op.add_column(
+    #     "connector_credential_pair",
+    #     sa.Column(
+    #         "last_attempt_status",
+    #         sa.Enum(
+    #             "NOT_STARTED",
+    #             "IN_PROGRESS",
+    #             "SUCCESS",
+    #             "FAILED",
+    #             name="indexingstatus",
+    #             native_enum=False,
+    #         ),
+    #         nullable=False,
+    #     ),
+    # )
+    # op.add_column(
+    #     "connector_credential_pair",
+    #     sa.Column("total_docs_indexed", sa.Integer(), nullable=False),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("connector_credential_pair", "total_docs_indexed")
-    op.drop_column("connector_credential_pair", "last_attempt_status")
-    op.drop_column("connector_credential_pair", "last_successful_index_time")
+    pass
+    # op.drop_column("connector_credential_pair", "total_docs_indexed")
+    # op.drop_column("connector_credential_pair", "last_attempt_status")
+    # op.drop_column("connector_credential_pair", "last_successful_index_time")

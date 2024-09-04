@@ -18,44 +18,46 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "tool",
-        sa.Column(
-            "openapi_schema",
-            postgresql.JSONB(astext_type=sa.Text()),
-            nullable=True,
-        ),
-    )
-    op.add_column(
-        "tool",
-        sa.Column(
-            "user_id",
-            fastapi_users_db_sqlalchemy.generics.GUID(),
-            nullable=True,
-        ),
-    )
-    op.create_foreign_key("tool_user_fk", "tool", "user", ["user_id"], ["id"])
+    pass
+    # op.add_column(
+    #     "tool",
+    #     sa.Column(
+    #         "openapi_schema",
+    #         postgresql.JSONB(astext_type=sa.Text()),
+    #         nullable=True,
+    #     ),
+    # )
+    # op.add_column(
+    #     "tool",
+    #     sa.Column(
+    #         "user_id",
+    #         fastapi_users_db_sqlalchemy.generics.GUID(),
+    #         nullable=True,
+    #     ),
+    # )
+    # op.create_foreign_key("tool_user_fk", "tool", "user", ["user_id"], ["id"])
 
-    op.create_table(
-        "tool_call",
-        sa.Column("id", sa.Integer(), primary_key=True),
-        sa.Column("tool_id", sa.Integer(), nullable=False),
-        sa.Column("tool_name", sa.String(), nullable=False),
-        sa.Column(
-            "tool_arguments", postgresql.JSONB(astext_type=sa.Text()), nullable=False
-        ),
-        sa.Column(
-            "tool_result", postgresql.JSONB(astext_type=sa.Text()), nullable=False
-        ),
-        sa.Column(
-            "message_id", sa.Integer(), sa.ForeignKey("chat_message.id"), nullable=False
-        ),
-    )
+    # op.create_table(
+    #     "tool_call",
+    #     sa.Column("id", sa.Integer(), primary_key=True),
+    #     sa.Column("tool_id", sa.Integer(), nullable=False),
+    #     sa.Column("tool_name", sa.String(), nullable=False),
+    #     sa.Column(
+    #         "tool_arguments", postgresql.JSONB(astext_type=sa.Text()), nullable=False
+    #     ),
+    #     sa.Column(
+    #         "tool_result", postgresql.JSONB(astext_type=sa.Text()), nullable=False
+    #     ),
+    #     sa.Column(
+    #         "message_id", sa.Integer(), sa.ForeignKey("chat_message.id"), nullable=False
+    #     ),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_table("tool_call")
+    pass
+    # op.drop_table("tool_call")
 
-    op.drop_constraint("tool_user_fk", "tool", type_="foreignkey")
-    op.drop_column("tool", "user_id")
-    op.drop_column("tool", "openapi_schema")
+    # op.drop_constraint("tool_user_fk", "tool", type_="foreignkey")
+    # op.drop_column("tool", "user_id")
+    # op.drop_column("tool", "openapi_schema")

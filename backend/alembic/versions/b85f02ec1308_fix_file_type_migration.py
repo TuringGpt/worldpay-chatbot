@@ -15,12 +15,13 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.execute(
-        """
-        UPDATE file_store
-        SET file_origin = UPPER(file_origin)
-    """
-    )
+    pass
+    # op.execute(
+    #     """
+    #     UPDATE file_store
+    #     SET file_origin = UPPER(file_origin)
+    # """
+    # )
 
 
 def downgrade() -> None:

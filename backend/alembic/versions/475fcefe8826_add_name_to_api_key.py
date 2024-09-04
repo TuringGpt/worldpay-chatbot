@@ -16,8 +16,10 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column("api_key", sa.Column("name", sa.String(), nullable=True))
+    pass
+    # op.add_column("api_key", sa.Column("name", sa.String(), nullable=True))
 
 
 def downgrade() -> None:
-    op.drop_column("api_key", "name")
+    pass
+    # op.drop_column("api_key", "name")

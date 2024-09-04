@@ -16,10 +16,12 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "index_attempt", sa.Column("full_exception_trace", sa.Text(), nullable=True)
-    )
+    pass
+    # op.add_column(
+    #     "index_attempt", sa.Column("full_exception_trace", sa.Text(), nullable=True)
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("index_attempt", "full_exception_trace")
+    pass
+    # op.drop_column("index_attempt", "full_exception_trace")

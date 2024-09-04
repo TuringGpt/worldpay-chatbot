@@ -16,19 +16,21 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "persona",
-        sa.Column("is_visible", sa.Boolean(), nullable=True),
-    )
-    op.execute("UPDATE persona SET is_visible = true")
-    op.alter_column("persona", "is_visible", nullable=False)
+    pass
+    # op.add_column(
+    #     "persona",
+    #     sa.Column("is_visible", sa.Boolean(), nullable=True),
+    # )
+    # op.execute("UPDATE persona SET is_visible = true")
+    # op.alter_column("persona", "is_visible", nullable=False)
 
-    op.add_column(
-        "persona",
-        sa.Column("display_priority", sa.Integer(), nullable=True),
-    )
+    # op.add_column(
+    #     "persona",
+    #     sa.Column("display_priority", sa.Integer(), nullable=True),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("persona", "is_visible")
-    op.drop_column("persona", "display_priority")
+    pass
+    # op.drop_column("persona", "is_visible")
+    # op.drop_column("persona", "display_priority")

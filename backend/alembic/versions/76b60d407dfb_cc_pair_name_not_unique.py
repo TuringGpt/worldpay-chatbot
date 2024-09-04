@@ -16,21 +16,23 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.execute("DELETE FROM connector_credential_pair WHERE name IS NULL")
-    op.drop_constraint(
-        "connector_credential_pair__name__key",
-        "connector_credential_pair",
-        type_="unique",
-    )
-    op.alter_column(
-        "connector_credential_pair", "name", existing_type=sa.String(), nullable=False
-    )
+    pass
+    # op.execute("DELETE FROM connector_credential_pair WHERE name IS NULL")
+    # op.drop_constraint(
+    #     "connector_credential_pair__name__key",
+    #     "connector_credential_pair",
+    #     type_="unique",
+    # )
+    # op.alter_column(
+    #     "connector_credential_pair", "name", existing_type=sa.String(), nullable=False
+    # )
 
 
 def downgrade() -> None:
-    op.create_unique_constraint(
-        "connector_credential_pair__name__key", "connector_credential_pair", ["name"]
-    )
-    op.alter_column(
-        "connector_credential_pair", "name", existing_type=sa.String(), nullable=True
-    )
+    pass
+    # op.create_unique_constraint(
+    #     "connector_credential_pair__name__key", "connector_credential_pair", ["name"]
+    # )
+    # op.alter_column(
+    #     "connector_credential_pair", "name", existing_type=sa.String(), nullable=True
+    # )

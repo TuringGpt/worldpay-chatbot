@@ -16,12 +16,14 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "index_attempt",
-        sa.Column("docs_removed_from_index", sa.Integer()),
-    )
-    op.execute("UPDATE index_attempt SET docs_removed_from_index = 0")
+    pass
+    # op.add_column(
+    #     "index_attempt",
+    #     sa.Column("docs_removed_from_index", sa.Integer()),
+    # )
+    # op.execute("UPDATE index_attempt SET docs_removed_from_index = 0")
 
 
 def downgrade() -> None:
-    op.drop_column("index_attempt", "docs_removed_from_index")
+    pass
+    # op.drop_column("index_attempt", "docs_removed_from_index")

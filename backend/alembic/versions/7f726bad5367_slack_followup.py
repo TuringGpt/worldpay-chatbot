@@ -16,11 +16,13 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "chat_feedback",
-        sa.Column("required_followup", sa.Boolean(), nullable=True),
-    )
+    pass
+    # op.add_column(
+    #     "chat_feedback",
+    #     sa.Column("required_followup", sa.Boolean(), nullable=True),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("chat_feedback", "required_followup")
+    pass
+    # op.drop_column("chat_feedback", "required_followup")

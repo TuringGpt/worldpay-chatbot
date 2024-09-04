@@ -16,12 +16,14 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "index_attempt", sa.Column("from_beginning", sa.Boolean(), nullable=True)
-    )
-    op.execute("UPDATE index_attempt SET from_beginning = False")
-    op.alter_column("index_attempt", "from_beginning", nullable=False)
+    pass
+    # op.add_column(
+    #     "index_attempt", sa.Column("from_beginning", sa.Boolean(), nullable=True)
+    # )
+    # op.execute("UPDATE index_attempt SET from_beginning = False")
+    # op.alter_column("index_attempt", "from_beginning", nullable=False)
 
 
 def downgrade() -> None:
-    op.drop_column("index_attempt", "from_beginning")
+    pass
+    # op.drop_column("index_attempt", "from_beginning")

@@ -16,16 +16,18 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.drop_column("connector_credential_pair", "last_attempt_status")
+    pass
+    # op.drop_column("connector_credential_pair", "last_attempt_status")
 
 
 def downgrade() -> None:
-    op.add_column(
-        "connector_credential_pair",
-        sa.Column(
-            "last_attempt_status",
-            sa.VARCHAR(),
-            autoincrement=False,
-            nullable=True,
-        ),
-    )
+    pass
+    # op.add_column(
+    #     "connector_credential_pair",
+    #     sa.Column(
+    #         "last_attempt_status",
+    #         sa.VARCHAR(),
+    #         autoincrement=False,
+    #         nullable=True,
+    #     ),
+    # )

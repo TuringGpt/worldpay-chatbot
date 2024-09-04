@@ -15,11 +15,13 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "chat_feedback",
-        sa.Column("predefined_feedback", sa.String(), nullable=True),
-    )
+    pass
+    # op.add_column(
+    #     "chat_feedback",
+    #     sa.Column("predefined_feedback", sa.String(), nullable=True),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("chat_feedback", "predefined_feedback")
+    pass
+    # op.drop_column("chat_feedback", "predefined_feedback")

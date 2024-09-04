@@ -16,11 +16,13 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "persona",
-        sa.Column("llm_model_version_override", sa.String(), nullable=True),
-    )
+    pass
+    # op.add_column(
+    #     "persona",
+    #     sa.Column("llm_model_version_override", sa.String(), nullable=True),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("persona", "llm_model_version_override")
+    pass
+    # op.drop_column("persona", "llm_model_version_override")

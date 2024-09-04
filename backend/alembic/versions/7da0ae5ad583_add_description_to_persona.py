@@ -16,8 +16,10 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column("persona", sa.Column("description", sa.String(), nullable=True))
+    pass
+    # op.add_column("persona", sa.Column("description", sa.String(), nullable=True))
 
 
 def downgrade() -> None:
-    op.drop_column("persona", "description")
+    pass
+    # op.drop_column("persona", "description")

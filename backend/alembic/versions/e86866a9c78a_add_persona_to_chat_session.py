@@ -16,12 +16,14 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column("chat_session", sa.Column("persona_id", sa.Integer(), nullable=True))
-    op.create_foreign_key(
-        "fk_chat_session_persona_id", "chat_session", "persona", ["persona_id"], ["id"]
-    )
+    pass
+    # op.add_column("chat_session", sa.Column("persona_id", sa.Integer(), nullable=True))
+    # op.create_foreign_key(
+    #     "fk_chat_session_persona_id", "chat_session", "persona", ["persona_id"], ["id"]
+    # )
 
 
 def downgrade() -> None:
-    op.drop_constraint("fk_chat_session_persona_id", "chat_session", type_="foreignkey")
-    op.drop_column("chat_session", "persona_id")
+    pass
+    # op.drop_constraint("fk_chat_session_persona_id", "chat_session", type_="foreignkey")
+    # op.drop_column("chat_session", "persona_id")

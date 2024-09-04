@@ -16,13 +16,15 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column("persona", sa.Column("num_chunks", sa.Integer(), nullable=True))
-    op.add_column(
-        "persona",
-        sa.Column("apply_llm_relevance_filter", sa.Boolean(), nullable=True),
-    )
+    pass
+    # op.add_column("persona", sa.Column("num_chunks", sa.Integer(), nullable=True))
+    # op.add_column(
+    #     "persona",
+    #     sa.Column("apply_llm_relevance_filter", sa.Boolean(), nullable=True),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("persona", "apply_llm_relevance_filter")
-    op.drop_column("persona", "num_chunks")
+    pass
+    # op.drop_column("persona", "apply_llm_relevance_filter")
+    # op.drop_column("persona", "num_chunks")

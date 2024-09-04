@@ -17,21 +17,23 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_table(
-        "persona__document_set",
-        sa.Column("persona_id", sa.Integer(), nullable=False),
-        sa.Column("document_set_id", sa.Integer(), nullable=False),
-        sa.ForeignKeyConstraint(
-            ["document_set_id"],
-            ["document_set.id"],
-        ),
-        sa.ForeignKeyConstraint(
-            ["persona_id"],
-            ["persona.id"],
-        ),
-        sa.PrimaryKeyConstraint("persona_id", "document_set_id"),
-    )
+    pass
+    # op.create_table(
+    #     "persona__document_set",
+    #     sa.Column("persona_id", sa.Integer(), nullable=False),
+    #     sa.Column("document_set_id", sa.Integer(), nullable=False),
+    #     sa.ForeignKeyConstraint(
+    #         ["document_set_id"],
+    #         ["document_set.id"],
+    #     ),
+    #     sa.ForeignKeyConstraint(
+    #         ["persona_id"],
+    #         ["persona.id"],
+    #     ),
+    #     sa.PrimaryKeyConstraint("persona_id", "document_set_id"),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_table("persona__document_set")
+    pass
+    # op.drop_table("persona__document_set")

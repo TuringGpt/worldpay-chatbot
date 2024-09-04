@@ -17,22 +17,24 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_table(
-        "slack_bot_config",
-        sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("persona_id", sa.Integer(), nullable=True),
-        sa.Column(
-            "channel_config",
-            postgresql.JSONB(astext_type=sa.Text()),
-            nullable=False,
-        ),
-        sa.ForeignKeyConstraint(
-            ["persona_id"],
-            ["persona.id"],
-        ),
-        sa.PrimaryKeyConstraint("id"),
-    )
+    pass
+    # op.create_table(
+    #     "slack_bot_config",
+    #     sa.Column("id", sa.Integer(), nullable=False),
+    #     sa.Column("persona_id", sa.Integer(), nullable=True),
+    #     sa.Column(
+    #         "channel_config",
+    #         postgresql.JSONB(astext_type=sa.Text()),
+    #         nullable=False,
+    #     ),
+    #     sa.ForeignKeyConstraint(
+    #         ["persona_id"],
+    #         ["persona.id"],
+    #     ),
+    #     sa.PrimaryKeyConstraint("id"),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_table("slack_bot_config")
+    pass
+    # op.drop_table("slack_bot_config")

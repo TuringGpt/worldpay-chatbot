@@ -16,20 +16,22 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_index(
-        op.f(
-            "ix_document_by_connector_credential_pair_pkey__connector_id__credential_id"
-        ),
-        "document_by_connector_credential_pair",
-        ["connector_id", "credential_id"],
-        unique=False,
-    )
+    pass
+    # op.create_index(
+    #     op.f(
+    #         "ix_document_by_connector_credential_pair_pkey__connector_id__credential_id"
+    #     ),
+    #     "document_by_connector_credential_pair",
+    #     ["connector_id", "credential_id"],
+    #     unique=False,
+    # )
 
 
 def downgrade() -> None:
-    op.drop_index(
-        op.f(
-            "ix_document_by_connector_credential_pair_pkey__connector_id__credential_id"
-        ),
-        table_name="document_by_connector_credential_pair",
-    )
+    pass
+    # op.drop_index(
+    #     op.f(
+    #         "ix_document_by_connector_credential_pair_pkey__connector_id__credential_id"
+    #     ),
+    #     table_name="document_by_connector_credential_pair",
+    # )

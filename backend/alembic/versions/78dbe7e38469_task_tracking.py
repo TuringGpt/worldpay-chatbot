@@ -16,33 +16,35 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_table(
-        "task_queue_jobs",
-        sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("task_id", sa.String(), nullable=False),
-        sa.Column("task_name", sa.String(), nullable=False),
-        sa.Column(
-            "status",
-            sa.Enum(
-                "PENDING",
-                "STARTED",
-                "SUCCESS",
-                "FAILURE",
-                name="taskstatus",
-                native_enum=False,
-            ),
-            nullable=False,
-        ),
-        sa.Column("start_time", sa.DateTime(timezone=True), nullable=True),
-        sa.Column(
-            "register_time",
-            sa.DateTime(timezone=True),
-            server_default=sa.text("now()"),
-            nullable=False,
-        ),
-        sa.PrimaryKeyConstraint("id"),
-    )
+    pass
+    # op.create_table(
+    #     "task_queue_jobs",
+    #     sa.Column("id", sa.Integer(), nullable=False),
+    #     sa.Column("task_id", sa.String(), nullable=False),
+    #     sa.Column("task_name", sa.String(), nullable=False),
+    #     sa.Column(
+    #         "status",
+    #         sa.Enum(
+    #             "PENDING",
+    #             "STARTED",
+    #             "SUCCESS",
+    #             "FAILURE",
+    #             name="taskstatus",
+    #             native_enum=False,
+    #         ),
+    #         nullable=False,
+    #     ),
+    #     sa.Column("start_time", sa.DateTime(timezone=True), nullable=True),
+    #     sa.Column(
+    #         "register_time",
+    #         sa.DateTime(timezone=True),
+    #         server_default=sa.text("now()"),
+    #         nullable=False,
+    #     ),
+    #     sa.PrimaryKeyConstraint("id"),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_table("task_queue_jobs")
+    pass
+    # op.drop_table("task_queue_jobs")

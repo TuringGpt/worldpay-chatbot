@@ -129,14 +129,16 @@ def upgrade() -> None:
             sa.PrimaryKeyConstraint("connector_id", "credential_id"),
         )
 
-    # Add columns to the 'index_attempt' table
-    if not inspector.has_column("index_attempt", "connector_id"):
+    # Check if the 'connector_id' column exists in the 'index_attempt' table
+    existing_columns = [col["name"] for col in inspector.get_columns("index_attempt")]
+    
+    if "connector_id" not in existing_columns:
         op.add_column(
             "index_attempt",
             sa.Column("connector_id", sa.Integer(), nullable=True),
         )
 
-    if not inspector.has_column("index_attempt", "credential_id"):
+    if "credential_id" not in existing_columns:
         op.add_column(
             "index_attempt",
             sa.Column("credential_id", sa.Integer(), nullable=True),
@@ -164,13 +166,13 @@ def upgrade() -> None:
         )
 
     # Drop columns if they exist
-    if inspector.has_column("index_attempt", "connector_specific_config"):
+    if "connector_specific_config" in existing_columns:
         op.drop_column("index_attempt", "connector_specific_config")
     
-    if inspector.has_column("index_attempt", "source"):
+    if "source" in existing_columns:
         op.drop_column("index_attempt", "source")
     
-    if inspector.has_column("index_attempt", "input_type"):
+    if "input_type" in existing_columns:
         op.drop_column("index_attempt", "input_type")
 
 
@@ -224,3 +226,4 @@ def downgrade() -> None:
     op.drop_table("connector_credential_pair")
     op.drop_table("credential")
     op.drop_table("connector")
+

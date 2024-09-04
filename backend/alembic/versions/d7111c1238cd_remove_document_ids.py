@@ -17,16 +17,18 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.drop_column("index_attempt", "document_ids")
+    pass
+    # op.drop_column("index_attempt", "document_ids")
 
 
 def downgrade() -> None:
-    op.add_column(
-        "index_attempt",
-        sa.Column(
-            "document_ids",
-            postgresql.ARRAY(sa.VARCHAR()),
-            autoincrement=False,
-            nullable=True,
-        ),
-    )
+    pass
+    # op.add_column(
+    #     "index_attempt",
+    #     sa.Column(
+    #         "document_ids",
+    #         postgresql.ARRAY(sa.VARCHAR()),
+    #         autoincrement=False,
+    #         nullable=True,
+    #     ),
+    # )

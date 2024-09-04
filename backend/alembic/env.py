@@ -57,27 +57,29 @@ def run_migrations_offline() -> None:
     script output.
 
     """
-    url = build_connection_string()
-    context.configure(
-        url=url,
-        target_metadata=target_metadata,  # type: ignore
-        literal_binds=True,
-        dialect_opts={"paramstyle": "named"},
-    )
+    return
+    # url = build_connection_string()
+    # context.configure(
+    #     url=url,
+    #     target_metadata=target_metadata,  # type: ignore
+    #     literal_binds=True,
+    #     dialect_opts={"paramstyle": "named"},
+    # )
 
-    with context.begin_transaction():
-        context.run_migrations()
+    # with context.begin_transaction():
+    #     context.run_migrations()
 
 
 def do_run_migrations(connection: Connection) -> None:
-    context.configure(
-        connection=connection,
-        target_metadata=target_metadata,  # type: ignore
-        include_object=include_object,
-    )  # type: ignore
+    return
+    # context.configure(
+    #     connection=connection,
+    #     target_metadata=target_metadata,  # type: ignore
+    #     include_object=include_object,
+    # )  # type: ignore
 
-    with context.begin_transaction():
-        context.run_migrations()
+    # with context.begin_transaction():
+    #     context.run_migrations()
 
 
 async def run_async_migrations() -> None:
@@ -85,22 +87,23 @@ async def run_async_migrations() -> None:
     and associate a connection with the context.
 
     """
+    return
 
-    connectable = create_async_engine(
-        build_connection_string(),
-        poolclass=pool.NullPool,
-    )
+    # connectable = create_async_engine(
+    #     build_connection_string(),
+    #     poolclass=pool.NullPool,
+    # )
 
-    async with connectable.connect() as connection:
-        await connection.run_sync(do_run_migrations)
+    # async with connectable.connect() as connection:
+    #     await connection.run_sync(do_run_migrations)
 
-    await connectable.dispose()
+    # await connectable.dispose()
 
 
 def run_migrations_online() -> None:
     """Run migrations in 'online' mode."""
-
-    asyncio.run(run_async_migrations())
+    return
+    # asyncio.run(run_async_migrations())
 
 
 if context.is_offline_mode():

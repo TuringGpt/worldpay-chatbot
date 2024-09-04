@@ -16,29 +16,31 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_table(
-        "chat_feedback",
-        sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("chat_message_chat_session_id", sa.Integer(), nullable=False),
-        sa.Column("chat_message_message_number", sa.Integer(), nullable=False),
-        sa.Column("chat_message_edit_number", sa.Integer(), nullable=False),
-        sa.Column("is_positive", sa.Boolean(), nullable=True),
-        sa.Column("feedback_text", sa.Text(), nullable=True),
-        sa.ForeignKeyConstraint(
-            [
-                "chat_message_chat_session_id",
-                "chat_message_message_number",
-                "chat_message_edit_number",
-            ],
-            [
-                "chat_message.chat_session_id",
-                "chat_message.message_number",
-                "chat_message.edit_number",
-            ],
-        ),
-        sa.PrimaryKeyConstraint("id"),
-    )
+    pass
+    # op.create_table(
+    #     "chat_feedback",
+    #     sa.Column("id", sa.Integer(), nullable=False),
+    #     sa.Column("chat_message_chat_session_id", sa.Integer(), nullable=False),
+    #     sa.Column("chat_message_message_number", sa.Integer(), nullable=False),
+    #     sa.Column("chat_message_edit_number", sa.Integer(), nullable=False),
+    #     sa.Column("is_positive", sa.Boolean(), nullable=True),
+    #     sa.Column("feedback_text", sa.Text(), nullable=True),
+    #     sa.ForeignKeyConstraint(
+    #         [
+    #             "chat_message_chat_session_id",
+    #             "chat_message_message_number",
+    #             "chat_message_edit_number",
+    #         ],
+    #         [
+    #             "chat_message.chat_session_id",
+    #             "chat_message.message_number",
+    #             "chat_message.edit_number",
+    #         ],
+    #     ),
+    #     sa.PrimaryKeyConstraint("id"),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_table("chat_feedback")
+    pass
+    # op.drop_table("chat_feedback")

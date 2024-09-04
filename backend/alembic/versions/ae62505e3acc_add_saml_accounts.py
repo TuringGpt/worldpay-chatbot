@@ -17,31 +17,33 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_table(
-        "saml",
-        sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column(
-            "user_id",
-            fastapi_users_db_sqlalchemy.generics.GUID(),
-            nullable=False,
-        ),
-        sa.Column("encrypted_cookie", sa.Text(), nullable=False),
-        sa.Column("expires_at", sa.DateTime(timezone=True), nullable=True),
-        sa.Column(
-            "updated_at",
-            sa.DateTime(timezone=True),
-            server_default=sa.text("now()"),
-            nullable=False,
-        ),
-        sa.ForeignKeyConstraint(
-            ["user_id"],
-            ["user.id"],
-        ),
-        sa.PrimaryKeyConstraint("id"),
-        sa.UniqueConstraint("encrypted_cookie"),
-        sa.UniqueConstraint("user_id"),
-    )
+    pass
+    # op.create_table(
+    #     "saml",
+    #     sa.Column("id", sa.Integer(), nullable=False),
+    #     sa.Column(
+    #         "user_id",
+    #         fastapi_users_db_sqlalchemy.generics.GUID(),
+    #         nullable=False,
+    #     ),
+    #     sa.Column("encrypted_cookie", sa.Text(), nullable=False),
+    #     sa.Column("expires_at", sa.DateTime(timezone=True), nullable=True),
+    #     sa.Column(
+    #         "updated_at",
+    #         sa.DateTime(timezone=True),
+    #         server_default=sa.text("now()"),
+    #         nullable=False,
+    #     ),
+    #     sa.ForeignKeyConstraint(
+    #         ["user_id"],
+    #         ["user.id"],
+    #     ),
+    #     sa.PrimaryKeyConstraint("id"),
+    #     sa.UniqueConstraint("encrypted_cookie"),
+    #     sa.UniqueConstraint("user_id"),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_table("saml")
+    pass
+    # op.drop_table("saml")

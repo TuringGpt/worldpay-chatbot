@@ -17,10 +17,12 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "chat_message", sa.Column("token_count", sa.Integer(), nullable=False)
-    )
+    pass
+    # op.add_column(
+    #     "chat_message", sa.Column("token_count", sa.Integer(), nullable=False)
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("chat_message", "token_count")
+    pass
+    # op.drop_column("chat_message", "token_count")

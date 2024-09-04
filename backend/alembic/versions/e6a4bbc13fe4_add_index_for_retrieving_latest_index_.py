@@ -16,16 +16,18 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_index(
-        op.f("ix_index_attempt_latest_for_connector_credential_pair"),
-        "index_attempt",
-        ["connector_id", "credential_id", "time_created"],
-        unique=False,
-    )
+    pass
+    # op.create_index(
+    #     op.f("ix_index_attempt_latest_for_connector_credential_pair"),
+    #     "index_attempt",
+    #     ["connector_id", "credential_id", "time_created"],
+    #     unique=False,
+    # )
 
 
 def downgrade() -> None:
-    op.drop_index(
-        op.f("ix_index_attempt_latest_for_connector_credential_pair"),
-        table_name="index_attempt",
-    )
+    pass
+    # op.drop_index(
+    #     op.f("ix_index_attempt_latest_for_connector_credential_pair"),
+    #     table_name="index_attempt",
+    # )

@@ -17,13 +17,15 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "persona",
-        sa.Column("retrieval_enabled", sa.Boolean(), nullable=True),
-    )
-    op.execute("UPDATE persona SET retrieval_enabled = true")
-    op.alter_column("persona", "retrieval_enabled", nullable=False)
+    pass
+    # op.add_column(
+    #     "persona",
+    #     sa.Column("retrieval_enabled", sa.Boolean(), nullable=True),
+    # )
+    # op.execute("UPDATE persona SET retrieval_enabled = true")
+    # op.alter_column("persona", "retrieval_enabled", nullable=False)
 
 
 def downgrade() -> None:
-    op.drop_column("persona", "retrieval_enabled")
+    pass
+    # op.drop_column("persona", "retrieval_enabled")

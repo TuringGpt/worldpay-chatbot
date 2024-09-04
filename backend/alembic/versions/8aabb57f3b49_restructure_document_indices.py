@@ -17,23 +17,25 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.drop_table("chunk")
-    op.execute("DROP TYPE IF EXISTS documentstoretype")
+    pass
+    # op.drop_table("chunk")
+    # op.execute("DROP TYPE IF EXISTS documentstoretype")
 
 
 def downgrade() -> None:
-    op.create_table(
-        "chunk",
-        sa.Column("id", sa.VARCHAR(), autoincrement=False, nullable=False),
-        sa.Column(
-            "document_store_type",
-            postgresql.ENUM("VECTOR", "KEYWORD", name="documentstoretype"),
-            autoincrement=False,
-            nullable=False,
-        ),
-        sa.Column("document_id", sa.VARCHAR(), autoincrement=False, nullable=False),
-        sa.ForeignKeyConstraint(
-            ["document_id"], ["document.id"], name="chunk_document_id_fkey"
-        ),
-        sa.PrimaryKeyConstraint("id", "document_store_type", name="chunk_pkey"),
-    )
+    pass
+    # op.create_table(
+    #     "chunk",
+    #     sa.Column("id", sa.VARCHAR(), autoincrement=False, nullable=False),
+    #     sa.Column(
+    #         "document_store_type",
+    #         postgresql.ENUM("VECTOR", "KEYWORD", name="documentstoretype"),
+    #         autoincrement=False,
+    #         nullable=False,
+    #     ),
+    #     sa.Column("document_id", sa.VARCHAR(), autoincrement=False, nullable=False),
+    #     sa.ForeignKeyConstraint(
+    #         ["document_id"], ["document.id"], name="chunk_document_id_fkey"
+    #     ),
+    #     sa.PrimaryKeyConstraint("id", "document_store_type", name="chunk_pkey"),
+    # )

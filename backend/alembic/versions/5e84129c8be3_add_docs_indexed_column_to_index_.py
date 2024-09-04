@@ -17,20 +17,22 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "index_attempt",
-        sa.Column("num_docs_indexed", sa.Integer()),
-    )
-    op.add_column(
-        "index_attempt",
-        sa.Column(
-            "time_started",
-            sa.DateTime(timezone=True),
-            nullable=True,
-        ),
-    )
+    pass
+    # op.add_column(
+    #     "index_attempt",
+    #     sa.Column("num_docs_indexed", sa.Integer()),
+    # )
+    # op.add_column(
+    #     "index_attempt",
+    #     sa.Column(
+    #         "time_started",
+    #         sa.DateTime(timezone=True),
+    #         nullable=True,
+    #     ),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("index_attempt", "time_started")
-    op.drop_column("index_attempt", "num_docs_indexed")
+    pass
+    # op.drop_column("index_attempt", "time_started")
+    # op.drop_column("index_attempt", "num_docs_indexed")

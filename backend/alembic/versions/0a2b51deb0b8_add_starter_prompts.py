@@ -17,15 +17,17 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "persona",
-        sa.Column(
-            "starter_messages",
-            postgresql.JSONB(astext_type=sa.Text()),
-            nullable=True,
-        ),
-    )
+    pass
+    # op.add_column(
+    #     "persona",
+    #     sa.Column(
+    #         "starter_messages",
+    #         postgresql.JSONB(astext_type=sa.Text()),
+    #         nullable=True,
+    #     ),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("persona", "starter_messages")
+    pass
+    # op.drop_column("persona", "starter_messages")

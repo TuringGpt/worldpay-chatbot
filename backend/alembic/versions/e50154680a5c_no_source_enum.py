@@ -18,21 +18,23 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.alter_column(
-        "search_doc",
-        "source_type",
-        type_=sa.String(length=50),
-        existing_type=sa.Enum(DocumentSource, native_enum=False),
-        existing_nullable=False,
-    )
-    op.execute("DROP TYPE IF EXISTS documentsource")
+    pass
+    # op.alter_column(
+    #     "search_doc",
+    #     "source_type",
+    #     type_=sa.String(length=50),
+    #     existing_type=sa.Enum(DocumentSource, native_enum=False),
+    #     existing_nullable=False,
+    # )
+    # op.execute("DROP TYPE IF EXISTS documentsource")
 
 
 def downgrade() -> None:
-    op.alter_column(
-        "search_doc",
-        "source_type",
-        type_=sa.Enum(DocumentSource, native_enum=False),
-        existing_type=sa.String(length=50),
-        existing_nullable=False,
-    )
+    pass
+    # op.alter_column(
+    #     "search_doc",
+    #     "source_type",
+    #     type_=sa.Enum(DocumentSource, native_enum=False),
+    #     existing_type=sa.String(length=50),
+    #     existing_nullable=False,
+    # )

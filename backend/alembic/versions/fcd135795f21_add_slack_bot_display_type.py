@@ -16,24 +16,26 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "slack_bot_config",
-        sa.Column(
-            "response_type",
-            sa.Enum(
-                "QUOTES",
-                "CITATIONS",
-                name="slackbotresponsetype",
-                native_enum=False,
-            ),
-            nullable=True,
-        ),
-    )
-    op.execute(
-        "UPDATE slack_bot_config SET response_type = 'QUOTES' WHERE response_type IS NULL"
-    )
-    op.alter_column("slack_bot_config", "response_type", nullable=False)
+    pass
+    # op.add_column(
+    #     "slack_bot_config",
+    #     sa.Column(
+    #         "response_type",
+    #         sa.Enum(
+    #             "QUOTES",
+    #             "CITATIONS",
+    #             name="slackbotresponsetype",
+    #             native_enum=False,
+    #         ),
+    #         nullable=True,
+    #     ),
+    # )
+    # op.execute(
+    #     "UPDATE slack_bot_config SET response_type = 'QUOTES' WHERE response_type IS NULL"
+    # )
+    # op.alter_column("slack_bot_config", "response_type", nullable=False)
 
 
 def downgrade() -> None:
-    op.drop_column("slack_bot_config", "response_type")
+    pass
+    # op.drop_column("slack_bot_config", "response_type")

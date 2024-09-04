@@ -17,13 +17,15 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_table(
-        "key_value_store",
-        sa.Column("key", sa.String(), nullable=False),
-        sa.Column("value", postgresql.JSONB(astext_type=sa.Text()), nullable=False),
-        sa.PrimaryKeyConstraint("key"),
-    )
+    pass
+    # op.create_table(
+    #     "key_value_store",
+    #     sa.Column("key", sa.String(), nullable=False),
+    #     sa.Column("value", postgresql.JSONB(astext_type=sa.Text()), nullable=False),
+    #     sa.PrimaryKeyConstraint("key"),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_table("key_value_store")
+    pass
+    # op.drop_table("key_value_store")

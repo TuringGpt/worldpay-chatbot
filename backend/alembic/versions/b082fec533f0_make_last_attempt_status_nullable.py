@@ -16,30 +16,32 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.alter_column(
-        "connector_credential_pair",
-        "last_attempt_status",
-        existing_type=postgresql.ENUM(
-            "NOT_STARTED",
-            "IN_PROGRESS",
-            "SUCCESS",
-            "FAILED",
-            name="indexingstatus",
-        ),
-        nullable=True,
-    )
+    pass
+    # op.alter_column(
+    #     "connector_credential_pair",
+    #     "last_attempt_status",
+    #     existing_type=postgresql.ENUM(
+    #         "NOT_STARTED",
+    #         "IN_PROGRESS",
+    #         "SUCCESS",
+    #         "FAILED",
+    #         name="indexingstatus",
+    #     ),
+    #     nullable=True,
+    # )
 
 
 def downgrade() -> None:
-    op.alter_column(
-        "connector_credential_pair",
-        "last_attempt_status",
-        existing_type=postgresql.ENUM(
-            "NOT_STARTED",
-            "IN_PROGRESS",
-            "SUCCESS",
-            "FAILED",
-            name="indexingstatus",
-        ),
-        nullable=False,
-    )
+    pass
+    # op.alter_column(
+    #     "connector_credential_pair",
+    #     "last_attempt_status",
+    #     existing_type=postgresql.ENUM(
+    #         "NOT_STARTED",
+    #         "IN_PROGRESS",
+    #         "SUCCESS",
+    #         "FAILED",
+    #         name="indexingstatus",
+    #     ),
+    #     nullable=False,
+    # )

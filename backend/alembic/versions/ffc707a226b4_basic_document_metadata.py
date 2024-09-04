@@ -17,21 +17,23 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "document",
-        sa.Column("doc_updated_at", sa.DateTime(timezone=True), nullable=True),
-    )
-    op.add_column(
-        "document",
-        sa.Column("primary_owners", postgresql.ARRAY(sa.String()), nullable=True),
-    )
-    op.add_column(
-        "document",
-        sa.Column("secondary_owners", postgresql.ARRAY(sa.String()), nullable=True),
-    )
+    pass
+    # op.add_column(
+    #     "document",
+    #     sa.Column("doc_updated_at", sa.DateTime(timezone=True), nullable=True),
+    # )
+    # op.add_column(
+    #     "document",
+    #     sa.Column("primary_owners", postgresql.ARRAY(sa.String()), nullable=True),
+    # )
+    # op.add_column(
+    #     "document",
+    #     sa.Column("secondary_owners", postgresql.ARRAY(sa.String()), nullable=True),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("document", "secondary_owners")
-    op.drop_column("document", "primary_owners")
-    op.drop_column("document", "doc_updated_at")
+    pass
+    # op.drop_column("document", "secondary_owners")
+    # op.drop_column("document", "primary_owners")
+    # op.drop_column("document", "doc_updated_at")

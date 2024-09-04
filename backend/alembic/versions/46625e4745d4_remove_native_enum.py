@@ -16,14 +16,15 @@ depends_on: None = None
 
 
 def upgrade() -> None:
+    pass
     # At this point, we directly changed some previous migrations,
     # https://github.com/danswer-ai/danswer/pull/637
     # Due to using Postgres native Enums, it caused some complications for first time users.
     # To remove those complications, all Enums are only handled application side moving forward.
     # This migration exists to ensure that existing users don't run into upgrade issues.
-    op.alter_column("index_attempt", "status", type_=String)
-    op.alter_column("connector_credential_pair", "last_attempt_status", type_=String)
-    op.execute("DROP TYPE IF EXISTS indexingstatus")
+    # op.alter_column("index_attempt", "status", type_=String)
+    # op.alter_column("connector_credential_pair", "last_attempt_status", type_=String)
+    # op.execute("DROP TYPE IF EXISTS indexingstatus")
 
 
 def downgrade() -> None:

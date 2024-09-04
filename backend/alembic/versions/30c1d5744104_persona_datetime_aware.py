@@ -16,22 +16,24 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column("persona", sa.Column("datetime_aware", sa.Boolean(), nullable=True))
-    op.execute("UPDATE persona SET datetime_aware = TRUE")
-    op.alter_column("persona", "datetime_aware", nullable=False)
-    op.create_index(
-        "_default_persona_name_idx",
-        "persona",
-        ["name"],
-        unique=True,
-        postgresql_where=sa.text("default_persona = true"),
-    )
+    pass
+    # op.add_column("persona", sa.Column("datetime_aware", sa.Boolean(), nullable=True))
+    # op.execute("UPDATE persona SET datetime_aware = TRUE")
+    # op.alter_column("persona", "datetime_aware", nullable=False)
+    # op.create_index(
+    #     "_default_persona_name_idx",
+    #     "persona",
+    #     ["name"],
+    #     unique=True,
+    #     postgresql_where=sa.text("default_persona = true"),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_index(
-        "_default_persona_name_idx",
-        table_name="persona",
-        postgresql_where=sa.text("default_persona = true"),
-    )
-    op.drop_column("persona", "datetime_aware")
+    pass
+    # op.drop_index(
+    #     "_default_persona_name_idx",
+    #     table_name="persona",
+    #     postgresql_where=sa.text("default_persona = true"),
+    # )
+    # op.drop_column("persona", "datetime_aware")

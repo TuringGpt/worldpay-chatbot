@@ -17,15 +17,17 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "query_event",
-        sa.Column(
-            "retrieved_document_ids",
-            postgresql.ARRAY(sa.String()),
-            nullable=True,
-        ),
-    )
+    pass
+    # op.add_column(
+    #     "query_event",
+    #     sa.Column(
+    #         "retrieved_document_ids",
+    #         postgresql.ARRAY(sa.String()),
+    #         nullable=True,
+    #     ),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("query_event", "retrieved_document_ids")
+    pass
+    # op.drop_column("query_event", "retrieved_document_ids")

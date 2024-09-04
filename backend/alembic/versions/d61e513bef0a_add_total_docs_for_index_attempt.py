@@ -16,17 +16,19 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "index_attempt",
-        sa.Column("new_docs_indexed", sa.Integer(), nullable=True),
-    )
-    op.alter_column(
-        "index_attempt", "num_docs_indexed", new_column_name="total_docs_indexed"
-    )
+    pass
+    # op.add_column(
+    #     "index_attempt",
+    #     sa.Column("new_docs_indexed", sa.Integer(), nullable=True),
+    # )
+    # op.alter_column(
+    #     "index_attempt", "num_docs_indexed", new_column_name="total_docs_indexed"
+    # )
 
 
 def downgrade() -> None:
-    op.alter_column(
-        "index_attempt", "total_docs_indexed", new_column_name="num_docs_indexed"
-    )
-    op.drop_column("index_attempt", "new_docs_indexed")
+    pass
+    # op.alter_column(
+    #     "index_attempt", "total_docs_indexed", new_column_name="num_docs_indexed"
+    # )
+    # op.drop_column("index_attempt", "new_docs_indexed")

@@ -16,21 +16,23 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "query_event",
-        sa.Column("chat_session_id", sa.Integer(), nullable=True),
-    )
-    op.create_foreign_key(
-        "fk_query_event_chat_session_id",
-        "query_event",
-        "chat_session",
-        ["chat_session_id"],
-        ["id"],
-    )
+    pass
+    # op.add_column(
+    #     "query_event",
+    #     sa.Column("chat_session_id", sa.Integer(), nullable=True),
+    # )
+    # op.create_foreign_key(
+    #     "fk_query_event_chat_session_id",
+    #     "query_event",
+    #     "chat_session",
+    #     ["chat_session_id"],
+    #     ["id"],
+    # )
 
 
 def downgrade() -> None:
-    op.drop_constraint(
-        "fk_query_event_chat_session_id", "query_event", type_="foreignkey"
-    )
-    op.drop_column("query_event", "chat_session_id")
+    pass
+    # op.drop_constraint(
+    #     "fk_query_event_chat_session_id", "query_event", type_="foreignkey"
+    # )
+    # op.drop_column("query_event", "chat_session_id")

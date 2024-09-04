@@ -18,20 +18,22 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.alter_column("credential", "is_admin", new_column_name="admin_public")
-    op.add_column(
-        "document",
-        sa.Column("from_ingestion_api", sa.Boolean(), nullable=True),
-    )
-    op.alter_column(
-        "connector",
-        "source",
-        type_=sa.String(length=50),
-        existing_type=sa.Enum(DocumentSource, native_enum=False),
-        existing_nullable=False,
-    )
+    pass
+    # op.alter_column("credential", "is_admin", new_column_name="admin_public")
+    # op.add_column(
+    #     "document",
+    #     sa.Column("from_ingestion_api", sa.Boolean(), nullable=True),
+    # )
+    # op.alter_column(
+    #     "connector",
+    #     "source",
+    #     type_=sa.String(length=50),
+    #     existing_type=sa.Enum(DocumentSource, native_enum=False),
+    #     existing_nullable=False,
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("document", "from_ingestion_api")
-    op.alter_column("credential", "admin_public", new_column_name="is_admin")
+    pass
+    # op.drop_column("document", "from_ingestion_api")
+    # op.alter_column("credential", "admin_public", new_column_name="is_admin")

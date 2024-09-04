@@ -20,52 +20,54 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.alter_column(
-        "persona",
-        "search_type",
-        type_=sa.String,
-        existing_type=sa.Enum(SearchType, native_enum=False),
-        existing_nullable=False,
-    )
-    op.alter_column(
-        "persona",
-        "recency_bias",
-        type_=sa.String,
-        existing_type=sa.Enum(RecencyBiasSetting, native_enum=False),
-        existing_nullable=False,
-    )
+    pass
+    # op.alter_column(
+    #     "persona",
+    #     "search_type",
+    #     type_=sa.String,
+    #     existing_type=sa.Enum(SearchType, native_enum=False),
+    #     existing_nullable=False,
+    # )
+    # op.alter_column(
+    #     "persona",
+    #     "recency_bias",
+    #     type_=sa.String,
+    #     existing_type=sa.Enum(RecencyBiasSetting, native_enum=False),
+    #     existing_nullable=False,
+    # )
 
-    # Because the indexmodelstatus enum does not have a mapping to a string type
-    # we need this workaround instead of directly changing the type
-    op.add_column("embedding_model", sa.Column("temp_status", sa.String))
-    op.execute("UPDATE embedding_model SET temp_status = status::text")
-    op.drop_column("embedding_model", "status")
-    op.alter_column("embedding_model", "temp_status", new_column_name="status")
+    # # Because the indexmodelstatus enum does not have a mapping to a string type
+    # # we need this workaround instead of directly changing the type
+    # op.add_column("embedding_model", sa.Column("temp_status", sa.String))
+    # op.execute("UPDATE embedding_model SET temp_status = status::text")
+    # op.drop_column("embedding_model", "status")
+    # op.alter_column("embedding_model", "temp_status", new_column_name="status")
 
-    op.execute("DROP TYPE IF EXISTS searchtype")
-    op.execute("DROP TYPE IF EXISTS recencybiassetting")
-    op.execute("DROP TYPE IF EXISTS indexmodelstatus")
+    # op.execute("DROP TYPE IF EXISTS searchtype")
+    # op.execute("DROP TYPE IF EXISTS recencybiassetting")
+    # op.execute("DROP TYPE IF EXISTS indexmodelstatus")
 
 
 def downgrade() -> None:
-    op.alter_column(
-        "persona",
-        "search_type",
-        type_=sa.Enum(SearchType, native_enum=False),
-        existing_type=sa.String(length=50),
-        existing_nullable=False,
-    )
-    op.alter_column(
-        "persona",
-        "recency_bias",
-        type_=sa.Enum(RecencyBiasSetting, native_enum=False),
-        existing_type=sa.String(length=50),
-        existing_nullable=False,
-    )
-    op.alter_column(
-        "embedding_model",
-        "status",
-        type_=sa.Enum(IndexModelStatus, native_enum=False),
-        existing_type=sa.String(length=50),
-        existing_nullable=False,
-    )
+    pass
+    # op.alter_column(
+    #     "persona",
+    #     "search_type",
+    #     type_=sa.Enum(SearchType, native_enum=False),
+    #     existing_type=sa.String(length=50),
+    #     existing_nullable=False,
+    # )
+    # op.alter_column(
+    #     "persona",
+    #     "recency_bias",
+    #     type_=sa.Enum(RecencyBiasSetting, native_enum=False),
+    #     existing_type=sa.String(length=50),
+    #     existing_nullable=False,
+    # )
+    # op.alter_column(
+    #     "embedding_model",
+    #     "status",
+    #     type_=sa.Enum(IndexModelStatus, native_enum=False),
+    #     existing_type=sa.String(length=50),
+    #     existing_nullable=False,
+    # )

@@ -16,26 +16,28 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "chat_session",
-        sa.Column(
-            "shared_status",
-            sa.Enum(
-                "PUBLIC",
-                "PRIVATE",
-                name="chatsessionsharedstatus",
-                native_enum=False,
-            ),
-            nullable=True,
-        ),
-    )
-    op.execute("UPDATE chat_session SET shared_status='PRIVATE'")
-    op.alter_column(
-        "chat_session",
-        "shared_status",
-        nullable=False,
-    )
+    pass
+    # op.add_column(
+    #     "chat_session",
+    #     sa.Column(
+    #         "shared_status",
+    #         sa.Enum(
+    #             "PUBLIC",
+    #             "PRIVATE",
+    #             name="chatsessionsharedstatus",
+    #             native_enum=False,
+    #         ),
+    #         nullable=True,
+    #     ),
+    # )
+    # op.execute("UPDATE chat_session SET shared_status='PRIVATE'")
+    # op.alter_column(
+    #     "chat_session",
+    #     "shared_status",
+    #     nullable=False,
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("chat_session", "shared_status")
+    pass
+    # op.drop_column("chat_session", "shared_status")

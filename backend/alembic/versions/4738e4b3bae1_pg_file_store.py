@@ -16,13 +16,15 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.create_table(
-        "file_store",
-        sa.Column("file_name", sa.String(), nullable=False),
-        sa.Column("lobj_oid", sa.Integer(), nullable=False),
-        sa.PrimaryKeyConstraint("file_name"),
-    )
+    pass
+    # op.create_table(
+    #     "file_store",
+    #     sa.Column("file_name", sa.String(), nullable=False),
+    #     sa.Column("lobj_oid", sa.Integer(), nullable=False),
+    #     sa.PrimaryKeyConstraint("file_name"),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_table("file_store")
+    pass
+    # op.drop_table("file_store")

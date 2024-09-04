@@ -17,20 +17,22 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.alter_column(
-        "tag",
-        "source",
-        type_=sa.String(length=50),
-        existing_type=sa.Enum(DocumentSource, native_enum=False),
-        existing_nullable=False,
-    )
+    pass
+    # op.alter_column(
+    #     "tag",
+    #     "source",
+    #     type_=sa.String(length=50),
+    #     existing_type=sa.Enum(DocumentSource, native_enum=False),
+    #     existing_nullable=False,
+    # )
 
 
 def downgrade() -> None:
-    op.alter_column(
-        "tag",
-        "source",
-        type_=sa.Enum(DocumentSource, native_enum=False),
-        existing_type=sa.String(length=50),
-        existing_nullable=False,
-    )
+    pass
+    # op.alter_column(
+    #     "tag",
+    #     "source",
+    #     type_=sa.Enum(DocumentSource, native_enum=False),
+    #     existing_type=sa.String(length=50),
+    #     existing_nullable=False,
+    # )

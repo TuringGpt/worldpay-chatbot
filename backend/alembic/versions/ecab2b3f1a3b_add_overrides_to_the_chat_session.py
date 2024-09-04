@@ -17,24 +17,26 @@ depends_on: None = None
 
 
 def upgrade() -> None:
-    op.add_column(
-        "chat_session",
-        sa.Column(
-            "llm_override",
-            postgresql.JSONB(astext_type=sa.Text()),
-            nullable=True,
-        ),
-    )
-    op.add_column(
-        "chat_session",
-        sa.Column(
-            "prompt_override",
-            postgresql.JSONB(astext_type=sa.Text()),
-            nullable=True,
-        ),
-    )
+    pass
+    # op.add_column(
+    #     "chat_session",
+    #     sa.Column(
+    #         "llm_override",
+    #         postgresql.JSONB(astext_type=sa.Text()),
+    #         nullable=True,
+    #     ),
+    # )
+    # op.add_column(
+    #     "chat_session",
+    #     sa.Column(
+    #         "prompt_override",
+    #         postgresql.JSONB(astext_type=sa.Text()),
+    #         nullable=True,
+    #     ),
+    # )
 
 
 def downgrade() -> None:
-    op.drop_column("chat_session", "prompt_override")
-    op.drop_column("chat_session", "llm_override")
+    pass
+    # op.drop_column("chat_session", "prompt_override")
+    # op.drop_column("chat_session", "llm_override")

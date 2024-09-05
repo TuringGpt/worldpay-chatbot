@@ -14,7 +14,7 @@ services:
       - index
       - inference_model_server
     ports:
-    "8080:8080"
+    - 8080:8080
     restart: always
     env_file:
       - .env
@@ -75,7 +75,7 @@ services:
     depends_on:
       - api_server
     ports:
-    "3000:3000"
+    - 3000:3000
     restart: always
     env_file:
       - .env
